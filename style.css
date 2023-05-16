@@ -12,6 +12,11 @@ html {
 a {
 	text-decoration: none;
 }
+.logo{
+    width: 100px;
+	height: 40px;
+    margin-bottom:25px;
+}
 .container {
 	min-height: 100vh;
 	width: 100%;
@@ -515,7 +520,7 @@ p {
 	letter-spacing: 0.1rem;
 	margin-top: 10px;
 	transition: 0.3s ease;
-	transition-property: background-color, color
+	transition-property: background-color, color;
 }
 .subscribe-button button:hover {
 	color: white;
@@ -525,6 +530,114 @@ p {
 /* End of subscribe section start */
 
 /* Footer */
+footer * {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+footer ul {
+	list-style: none;
+	font-size: 14px;
+}
+footer {
+	color: #fff;
+	background: #121315;
+}
+footer p {
+	color: #ccc;
+	max-width: 25em;
+	line-height: 23px;
+}
+footer a {
+	color: #fff;
+	text-decoration: none;
+}
+footer .container2 {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 2em;
+}
+.footer2 .container2 {
+	display: flex;
+	justify-content: space-between;
+	gap: 2em;
+}
+.media-icons li, .service-icons li{
+	display: inline-block;
+	margin: 0.5em 0.5em 0.5em 0;
+}
+.media-icons a {
+	font-size: 1.1em;
+	width: 2em;
+	height: 2em;
+	border: 1px #fff solid;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: 0.3s;
+}
+.media-icons a:hover {
+	background: #fff;
+	color: #111;
+}
+.footer2 .menu {
+	margin-bottom: 3em;
+}
+.footer2 .menu li {
+	display: inline-block;
+	margin: 0 0.7em 0.7em 0;
+	text-align: center;
+}
+.footer2 .menu a {
+	transition: 0.35s;
+	font-weight: 600;
+}
+.footer2 .menu a:hover {
+	color: orange;
+}
+.input-wrap {
+	margin: 1em 0;
+	display: flex;
+}
+.input-wrap input {
+	padding: 0.5em;
+	border: none;
+	background: #20232a;
+	color: #ccc;
+}
+.input-wrap input:focus {
+	outline: none;
+}
+.input-wrap button {
+	padding: 0.8em;
+	background: #ff2b00;
+	border: none;
+	color: white;
+}
+.input-wrap button:hover {
+	background: white;
+	color: #111;
+}
+.submit-button button {
+	display: inline-block;
+	padding: 5px 15px;
+	color: white;
+	background-color: transparent;
+	border: 1px solid white;
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 0.1rem;
+	margin-top: 10px;
+	transition: 0.3s ease;
+	transition-property: background-color, color;
+}
+.submit-button button:hover {
+	color: white;
+	background-color: orange;
+}
+
+
 
 /* End Footer */
 
@@ -646,32 +759,15 @@ p {
 	}
 	
 }
-@media(max-width:900px)
-{
-  .footer-row{
-    flex-direction: column;
-  }
-  .footer-col{
-    width: 100%;
-    text-align: left;
-    margin-bottom: 25px;
-  }
-}
-@media(max-width:768px)
-{
-  .footer-row{
-    flex-direction: column;
-  }
-  .footer-col{
-    width: 100%;
-    text-align: left;
-    margin-bottom: 20px;
-  }
-}
+
 @media screen and (max-width: 900px) {
 	.carousel img{
 	  width: calc(100% / 2);
 	}
+	.footer2 .container2{
+		flex-direction: column;
+	}
+
   }
   
   @media screen and (max-width: 550px) {
