@@ -268,40 +268,6 @@ p {
 
 /* End Hero Section */
 
-#service-hero {
-	background-color: #3e5a42;
-	max-height: 80vh;
-}
-#service-hero h1 {
-	display: block;
-	width: fit-content;
-	font-size: 4rem;
-	position: relative;
-	color: transparent;
-	animation: text_reveal 0.5s ease forwards;
-	animation-delay: 1s;
-}
-#service-hero h3 {
-	display: block;
-	width: fit-content;
-	font-size: 1.7rem;
-	text-transform: uppercase;
-	position: relative;
-	color: transparent;
-	animation: text_reveal 0.5s ease forwards;
-	animation-delay: 1s;
-}
-.hero p {
-	font-size: 2rem;
-}
-#service-hero .hero {
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 0 50px;
-	justify-content: flex-start;
-}
-
-
 /* About Section */
 #about .about {
 	flex-direction: column-reverse;
