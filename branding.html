@@ -1,576 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>branding</title>
-  <style>
-    @import 'https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap';
-* {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
-}
-html {
-	font-size: 10px;
-	font-family: 'Montserrat', sans-serif;
-	scroll-behavior: smooth;
-}
-a {
-	text-decoration: none;
-}
-.logo{
-    width: 100px;
-	height: 40px;
-    margin-bottom:25px;
-}
-.section-title span {
-	color: orange;
-}
-.cta {
-	display: inline-block;
-	padding: 10px 30px;
-	color: white;
-	background-color: transparent;
-	border: 2px solid orange;
-	font-size: 2rem;
-	text-transform: uppercase;
-	letter-spacing: 0.1rem;
-	margin-top: 10px;
-	transition: 0.3s ease;
-	transition-property: background-color, color;
-}
-.cta:hover {
-	color: white;
-	background-color: orange;
-}
-.brand h1 {
-	font-size: 3rem;
-	text-transform: uppercase;
-	color: white;
-}
-.brand h1 span {
-	color: orange;
-}
-
-/* Header section */
-#header {
-	position: fixed;
-	z-index: 1000;
-	left: 0;
-	top: 0;
-	width: 100vw;
-	height: auto;
-}
-#header .header {
-	min-height: 8vh;
-	background-color: rgba(49, 48, 48, 0.24);
-	transition: 0.3s ease background-color;
-}
-#header .nav-bar {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	width: 100%;
-	height: 100%;
-	max-width: 1300px;
-	padding: 0 10px;
-}
-#header .nav-list ul {
-	list-style: none;
-	position: absolute;
-	background-color: rgb(100, 94, 94);
-	width: 100vw;
-	height: 100vh;
-	left: 100%;
-	top: 0;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	z-index: 1;
-	overflow-x: hidden;
-	transition: 0.5s ease left;
-}
-#header .nav-list ul.active {
-	left: 0%;
-}
-#header .nav-list ul a {
-	font-size: 2.5rem;
-	font-weight: 500;
-	letter-spacing: 0.2rem;
-	text-decoration: none;
-	color: white;
-	text-transform: uppercase;
-	padding: 20px;
-	display: block;
-}
-#header .nav-list ul a::after {
-	content: attr(data-after);
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%) scale(0);
-	color: rgba(240, 248, 255, 0.021);
-	font-size: 13rem;
-	letter-spacing: 50px;
-	z-index: -1;
-	transition: 0.3s ease letter-spacing;
-}
-#header .nav-list ul li:hover a::after {
-	transform: translate(-50%, -50%) scale(1);
-	letter-spacing: initial;
-}
-#header .nav-list ul li:hover a {
-	color: orange;
-}
-#header .hamburger {
-	height: 60px;
-	width: 60px;
-	display: inline-block;
-	border: 3px solid white;
-	border-radius: 50%;
-	position: relative;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	z-index: 100;
-	cursor: pointer;
-	transform: scale(0.8);
-	margin-right: 20px;
-}
-#header .hamburger:after {
-	position: absolute;
-	content: '';
-	height: 100%;
-	width: 100%;
-	border-radius: 50%;
-	border: 3px solid white;
-	animation: hamburger_puls 1s ease infinite;
-}
-#header .hamburger .bar {
-	height: 2px;
-	width: 30px;
-	position: relative;
-	background-color: white;
-	z-index: -1;
-}
-#header .hamburger .bar::after,
-#header .hamburger .bar::before {
-	content: '';
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	left: 0;
-	background-color: white;
-	transition: 0.3s ease;
-	transition-property: top, bottom;
-}
-#header .hamburger .bar::after {
-	top: 8px;
-}
-#header .hamburger .bar::before {
-	bottom: 8px;
-}
-#header .hamburger.active .bar::before {
-	bottom: 0;
-}
-#header .hamburger.active .bar::after {
-	top: 0;
-}
-
-/* End Header section */
-
-/* hero */
-#hero {
-  border-color: #20232a;
-	background-position: top center;
-  width: fit-content;
-  min-height: 70vh;
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-#hero::after {
-	content: '';
-	position: absolute;
-	left: 0;
-	top: 0;
-	height: 100%;
-	width: 100%;
-	background-color: black;
-	opacity: 0.7;
-	z-index: -1;
-}
-#hero .hero {
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 0 50px;
-	justify-content: flex-start;
-}
-#hero h1 {
-	display: block;
-	width: fit-content;
-	font-size: 4rem;
-	position: relative;
-	color: transparent;
-	animation: text_reveal 0.5s ease forwards;
-	animation-delay: 1s;
-}
-#hero h1:nth-child(2) {
-	animation-delay: 1s;
-}
-#hero h1 span {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 0;
-	background-color: orange;
-	animation: text_reveal_box 1s ease;
-	animation-delay: 0.5s;
-}
-#hero h1:nth-child(2) span {
-	animation-delay: 1.5s;
-}
-/* End of hero */
-
-/* info */
-#info {
-  max-width: 1200px;
-	justify-content: flex-start;
-  padding: 50px;
-  margin: 20px;
-}
-.info-col img {
-  width: 200px;
-  height: auto;
-}
-.info-content {
-  justify-items: center;
-  align-items: center;
-  text-align: center;
-}
-.info-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-/* end of info */
-
-/* Footer */
-footer * {
-	box-sizing: border-box;
-	padding: 0;
-	margin: 0;
-}
-footer ul {
-	list-style: none;
-	font-size: 14px;
-}
-footer {
-	color: #fff;
-	background: #121315;
-}
-footer p {
-	color: #ccc;
-	max-width: 25em;
-	line-height: 23px;
-}
-footer a {
-	color: #fff;
-	text-decoration: none;
-}
-footer .container2 {
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 2em;
-}
-.footer2 .container2 {
-	display: flex;
-	justify-content: space-between;
-	gap: 2em;
-}
-.media-icons li, .service-icons li{
-	display: inline-block;
-	margin: 0.5em 0.5em 0.5em 0;
-}
-.media-icons a {
-	font-size: 1.1em;
-	width: 2em;
-	height: 2em;
-	border: 1px #fff solid;
-	border-radius: 50%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	transition: 0.3s;
-}
-.media-icons a:hover {
-	background: #fff;
-	color: #111;
-}
-.footer2 .menu {
-	margin-bottom: 3em;
-}
-.footer2 .menu li {
-	display: inline-block;
-	margin: 0 0.7em 0.7em 0;
-	text-align: center;
-}
-.footer2 .menu a {
-	transition: 0.35s;
-	font-weight: 600;
-}
-.footer2 .menu a:hover {
-	color: orange;
-}
-.input-wrap {
-	margin: 1em 0;
-	display: flex;
-}
-.input-wrap input {
-	padding: 0.5em;
-	border: none;
-	background: #20232a;
-	color: #ccc;
-}
-.input-wrap input:focus {
-	outline: none;
-}
-.input-wrap button {
-	padding: 0.8em;
-	background: #ff2b00;
-	border: none;
-	color: white;
-}
-.input-wrap button:hover {
-	background: white;
-	color: #111;
-}
-.submit-button button {
-	display: inline-block;
-	padding: 5px 15px;
-	color: white;
-	background-color: transparent;
-	border: 1px solid white;
-	font-size: 14px;
-	text-transform: uppercase;
-	letter-spacing: 0.1rem;
-	margin-top: 10px;
-	transition: 0.3s ease;
-	transition-property: background-color, color;
-}
-.submit-button button:hover {
-	color: white;
-	background-color: orange;
-}
-/* End Footer */
-
-/* Keyframes */
-@keyframes hamburger_puls {
-	0% {
-		opacity: 1;
-		transform: scale(1);
-	}
-	100% {
-		opacity: 0;
-		transform: scale(1.4);
-	}
-}
-@keyframes text_reveal_box {
-	50% {
-		width: 100%;
-		left: 0;
-	}
-	100% {
-		width: 0;
-		left: 100%;
-	}
-}
-@keyframes text_reveal {
-	100% {
-		color: white;
-	}
-}
-@keyframes text_reveal_name {
-	100% {
-		color: orange;
-		font-weight: 500;
-	}
-}
-@media only screen and (min-width: 768px) {
-	.cta {
-		font-size: 1.7rem;
-		padding: 10px 30px;
-	}
-	h1.section-title {
-		font-size: 2rem;
-		font-weight: bold;
-		padding: 20px;
-	}
-	#hero h1 {
-		font-size: 7rem;
-	}
-
-}
-@media only screen and (min-width: 1200px) {
-	#header .hamburger {
-		display: none;
-	}
-	#header .nav-list ul {
-		position: initial;
-		display: block;
-		height: auto;
-		width: fit-content;
-		background-color: transparent;
-	}
-	#header .nav-list ul li {
-		display: inline-block;
-	}
-	#header .nav-list ul li a {
-		font-size: 1.8rem;
-	}
-}
-@media screen and (max-width: 900px) {
-	.footer2 .container2{
-		flex-direction: column;
-	}
-  }
-
-  </style>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="branding.css">
+	<title>branding</title>
 </head>
 <body>
-<!-- Header -->
-  <section id="header">
-    <div class="header container">
-      <div class="nav-bar">
-        <div class="brand">
-          <a href="#hero">
-            <img src="img/.png" alt="" class="logo">
-          </a>
-        </div>
-        <div class="nav-list">
-          <div class="hamburger">
-            <div class="bar"></div>
-          </div>
-          <ul>
-            <li><a href="index.html" data-after="Home">Home</a></li>
-            <li><a href="#about" data-after="About">About</a></li>
-            <li><a href="#services" data-after="Service">Services</a></li>
-            <li><a href="#contact" data-after="Contact">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-<!-- End Header -->
+	<section id="header">
+		<div class="header container">
+		  <div class="nav-bar">
+			<div class="brand">
+			  <a href="#hero">
+				<img src="img/.png" alt="" class="logo">
+			  </a>
+			</div>
+			<div class="nav-list">
+			  <div class="hamburger">
+				<div class="bar"></div>
+			  </div>
+			  <ul>
+				<li><a href="#hero" data-after="Home">Home</a></li>
+				<li><a href="#about" data-after="About">About</a></li>
+				<li><a href="#services" data-after="Service">Services</a></li>
+				<li><a href="#contact" data-after="Contact">Contact</a></li>
+			  </ul>
+			</div>
+		  </div>
+		</div>
+	  </section>
+	<section id="hero">
+		<div class="hero-container">
+			<h2>CAPABILLITIES</h2>
+			<h1>Branding</h1>
+			<h3>Powerful branding goes deeper than appearances. <br> It delivers your product, purpose and personality to just the right people.</h3>
+			<a href="#services" type="button" class="cta">join us</a>
 
-<!-- start hero -->
-<section id="hero">
-  <div class="hero container">
-    <div>
-      <h2>Capabilities</h2>
-      <h1>branding <span></span></h1>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit beatae nostrum harum quos itaque debitis odio eius suscipit delectus quis?</p>
-      <a href="#services" type="button" class="cta">join us</a>
-    </div>
-  </div>
-</section>
-<!-- End hero -->
-
-<!--info -->
-<section id="info">
-  <div class="info-container">
-    <div class="info-row">
-      <div class="info-content">
-        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, omnis?</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim maiores officia nulla quae vero esse, quisquam officiis ex voluptate delectus debitis iure deserunt, asperiores eligendi voluptatem quaerat exercitationem est. Corporis.</p>
-      </div>
-    </div>
-    <div class="info-row">
-      <div class="info-col">
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae, corrupti? Perferendis vitae odio cupiditate quos odit, accusamus velit voluptatem itaque?</p>
-      </div>
-      <div class="info-col">
-        <img src="IMG/18.jpg" alt="">
-      </div>
-    </div>
-    
-  </div>
-</section>
-<!-- End of info -->
+		</div>
+	</section>
+	<section id="information">
+		<div class="information-container">
+				<h2>A brand persona that’s uniquely yours,<br>
+					based on whats uniquely you</h2>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum dolor tempore ipsum excepturi, numquam veniam quod officia sunt dolorum deleniti quaerat nulla possimus libero unde debitis corrupti fuga? Enim, dicta!</p>
+		</div>
+		<div class="information-row">
+			<div class="information-col">
+				<h3>Lorem ipsum dolor sit.</h3>
+				<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit voluptatem voluptate numquam delectus veritatis nesciunt, dolore ducimus commodi illum ipsa.</p>
+			</div>
+			<div class="information-img">
+				<img src="IMG/21.jpg" alt="">
+			</div>
+		</div>
+	</section>
 
 
-<!--footer start-->
- <footer class="footer2">
-  <div class="container2">
-    <div class="col1">
-      <a href="#hero">
-        <img src="img/logo.png" alt="" class="logo">
-      </a>
-      <ul class="media-icons">
-        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-      </ul>
-    </div>
-    <div class="col2">
-      <ul class="menu">
-        <li><a href="#">home</a></li>
-        <li><a href="#">about</a></li>
-        <li><a href="#">services</a></li>
-        <li><a href="#">projestc</a></li>
-        <li><a href="#">contact us</a></li>
-      </ul>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet, iure.</p>
-    </div>
-    <div class="col3">
-      <p>contact us</p>
-      <form>
-        <div class="input-wrap">
-          <input type="email" placeholder="your email example@gmail.com">
-        </div>
-      </form>
-      <div class="input-wrap">
-        <input type="email" placeholder="your message">
-      </div>
-      <div class="submit-button">
-        <button>submit</button>
-      </div>
-    </div>
-  </div>
- </footer>
-<!--footer End--> 
-<script>
-  const hamburger = document.querySelector('.header .nav-bar .nav-list .hamburger');
-const mobile_menu = document.querySelector('.header .nav-bar .nav-list ul');
-const menu_item = document.querySelectorAll('.header .nav-bar .nav-list ul li a');
-const header = document.querySelector('.header.container');
-
-hamburger.addEventListener('click', () => {
-	hamburger.classList.toggle('active');
-	mobile_menu.classList.toggle('active');
-});
-
-document.addEventListener('scroll', () => {
-	var scroll_position = window.scrollY;
-	if (scroll_position > 250) {
-		header.style.backgroundColor = '#29323c';
-	} else {
-		header.style.backgroundColor = 'transparent';
-	}
-});
-
-menu_item.forEach((item) => {
-	item.addEventListener('click', () => {
-		hamburger.classList.toggle('active');
-		mobile_menu.classList.toggle('active');
-	});
-});
-</script> 
+	<footer class="footer2">
+		<div class="container2">
+		  <div class="col1">
+			<a href="#hero">
+			  <img src="img/logo.png" alt="" class="logo">
+			</a>
+			<ul class="media-icons">
+			  <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+			  <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+			  <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+			  <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+			</ul>
+		  </div>
+		  <div class="col2">
+			<ul class="menu">
+			  <li><a href="#">home</a></li>
+			  <li><a href="#">about</a></li>
+			  <li><a href="#">services</a></li>
+			  <li><a href="#">projestc</a></li>
+			  <li><a href="#">contact us</a></li>
+			</ul>
+			<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet, iure.</p>
+		  </div>
+		  <div class="col3">
+			<p>contact us</p>
+			<form>
+			  <div class="input-wrap">
+				<input type="email" placeholder="your email example@gmail.com">
+			  </div>
+			</form>
+			<div class="input-wrap">
+			  <input type="email" placeholder="your message">
+			</div>
+			<div class="submit-button">
+			  <button>submit</button>
+			</div>
+		  </div>
+		</div>
+	   </footer>
+	<script src="script.js"></script>
 </body>
 </html>
