@@ -1,3 +1,4 @@
+
 *{
 	padding: 0;
 	margin: 0;
@@ -49,7 +50,7 @@ a {
 	left: 0%;
 }
 #header .nav-list ul a {
-	font-size: 2.5rem;
+	font-size: 1.5rem;
 	font-weight: 500;
 	letter-spacing: 0.2rem;
 	text-decoration: none;
@@ -154,8 +155,10 @@ a {
 	width: fit-content;
 	font-size: 4rem;
 	position: relative;
-	animation: text_reveal 0.5s ease forwards;
-	animation-delay: 1s;
+    color: #20232a;
+}
+#hero h3 {
+    font-weight: inherit;
 }
 h2 {
     font-size: 1rem;
@@ -359,7 +362,7 @@ footer .container2 {
 		display: inline-block;
 	}
 	#header .nav-list ul li a {
-		font-size: 1rem;
+		font-size: 1.5rem;
         color: #111;
 	}
 	#header .nav-list ul a:after {
@@ -380,9 +383,11 @@ footer .container2 {
     .information-col {
         width: 100%;
         height: fit-content;
+        text-align: center;
+        align-items: center;
     }
     .information-img img {
-        width: 267px;
+        width: 291px;
         height: auto;
         padding: 20px 0px;
         
